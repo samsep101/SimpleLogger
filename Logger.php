@@ -29,7 +29,7 @@ class Logger
      */
     public function Log($text, $level='info')
     {
-        if (is_array($text))
+        if (is_array($text) || is_object($text))
             $text = print_r($text, 1);
 
         $message = $this->name.'('.$this->id.') '.date('Y-m-d H:i:s'). ": [$level]: ". $text."\n";
